@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="满清十二房详细历史资料库，涵盖清代皇室宗室八旗制度、十二旗主、满清皇室世系图谱及历史演变。">
+    <meta name="keywords" content="满清十二房, 清朝皇室, 八旗制度, 满清宗室, 清朝历史">
+    <title>满清十二房-清朝皇室八旗制度与宗室历史资料库</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #C41E3A;
+            --accent-gold: #D4AF37;
+            --bg-color: #FDFBF7;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #E0E0E0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 3px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+            background-color: rgba(139, 0, 0, 0.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/qingdynasty/1600/600') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 0;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* 8 Banners Grid */
+        .banners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .banner-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .banner-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .banner-img {
+            height: 160px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .banner-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .banner-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .banner-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: rgba(212, 175, 55, 0.2);
+            color: #8B6F0E;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            align-self: flex-start;
+        }
+
+        /* History Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--border-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: #fff;
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .content {
+            padding: 20px 30px;
+            background-color: #fff;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .content h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .year {
+            font-weight: bold;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Chart Section */
+        .chart-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-top: 40px;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .chart-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chart-bar {
+            width: 100%;
+            background-color: var(--primary-color);
+            height: 0;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: height 1s ease-out;
+            min-height: 4px;
+        }
+
+        .chart-bar-label {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background-color: #fff;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid transparent;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .left::after, .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+
+            .chart-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                满清十二房 <span>历史资料库</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#intro" class="active">简介</a></li>
+                    <li><a href="#banners">八旗体系</a></li>
+                    <li><a href="#history">历史演变</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>满清十二房：皇室宗室与八旗制度</h1>
+                <p>深入解析清朝皇室宗室组织结构、八旗正黄、镶黄等十二旗的历史沿革与职能划分。</p>
+                <a href="#banners" class="btn btn-primary">探索八旗制度</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="intro" class="container">
+            <div class="section-title">
+                <h2>什么是满清十二房？</h2>
+                <p>了解清代皇室宗室的基本架构</p>
+            </div>
+            <article>
+                <p>在清朝历史上，“满清十二房”通常指的是清太祖努尔哈赤建立八旗制度后，随着人口繁衍和宗室爵位分封而形成的十二大支系。这一体系是清朝统治阶级的核心组织形式，不仅决定了皇室成员的居住区域（内务府），还深刻影响了政治权力的分配。</p>
+                <p style="margin-top: 15px;">八旗制度分为“上三旗”与“下五旗”。上三旗由皇帝亲自统领，包括正黄旗、镶黄旗、正白旗；下五旗则由诸王、贝勒、贝子分统，包括正红旗、镶红旗、正蓝旗、镶蓝旗、镶白旗。虽然旗数固定为八，但随着宗室爵位的世袭（如铁帽子王等），形成了十二个主要的房系传承脉络。</p>
+            </article>
+        </section>
+
+        <!-- Banners Grid -->
+        <section id="banners" class="container">
+            <div class="section-title">
+                <h2>八旗宗室详解</h2>
+                <p>各旗主要房系与职能分布</p>
+            </div>
+            <div class="banners-grid">
+                <!-- Card 1 -->
+                <div class="banner-card">
+                    <div class="banner-img">
+                        <img src="https://picsum.photos/seed/huang/400/300" alt="正黄旗">
+                    </div>
+                    <div class="banner-content">
+                        <h3>正黄旗房系</h3>
+                        <p>上三旗之首，由皇帝直接统领，多驻守京师核心区域，负责宫廷禁卫。</p>
+                        <span class="tag">上三旗</span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="banner-card">
+                    <div class="banner-img">
+                        <img src="https://picsum.photos/seed/xianghuang/400/300" alt="镶黄旗">
+                    </div>
+                    <div class="banner-content">
+                        <h3>镶黄旗房系</h3>
+                        <p>上三旗之一，地位崇高，包衣佐领多由皇帝亲信管理，皇室成员多出此旗。</p>
+                        <span class="tag">上三旗</span>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="banner-card">
+                    <div class="banner-img">
+                        <img src="https://picsum.photos/seed/baiqi/400/300" alt="正白旗">
+                    </div>
+                    <div class="banner-content">
+                        <h3>正白旗房系</h3>
+                        <p>由皇太极改制后归入上三旗，著名的“铁帽子王”多出自此系，管理京畿要务。</p>
+                        <span class="tag">上三旗</span>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="banner-card">
+                    <div class="banner-img">
+                        <img src="https://picsum.photos/seed/hongqi/400/300" alt="正红旗">
+                    </div>
+                    <div class="banner-content">
+                        <h3>正红旗房系</h3>
+                        <p>下五旗之首，由多罗贝勒等王公统领，兵力雄厚，多负责京师外围防御。</p>
+                        <span class="tag">下五旗</span>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="banner-card">
+                    <div class="banner-img">
+                        <img src="https://picsum.photos/seed/xianghong/400/300" alt="镶红旗">
+                    </div>
+                    <div class="banner-content">
+                        <h3>镶红旗房系</h3>
+                        <p>下五旗之一，政治地位稳固，多与蒙古联姻，负责重要行政事务。</p>
+                        <span class="tag">下五旗</span>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="banner-card">
+                    <div class="banner-img">
+                        <img src="https://picsum.photos/seed/lanqi/400/300" alt="正蓝旗">
+                    </div>
+                    <div class="banner-content">
+                        <h3>正蓝旗房系</h3>
+                        <p>下五旗之一，原为上三旗，后降为下五旗。多由闲散宗室居住，管理漕运等事。</p>
+                        <span class="tag">下五旗</span>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="banner-card">
+                    <div class="banner-img">
+                        <img src="https://picsum.photos/seed/xianglan/400/300" alt="镶蓝旗">
+                    </div>
+                    <div class="banner-content">
+                        <h3>镶蓝旗房系</h3>
+                        <p>下五旗中兵力最强的一旗，由郑亲王、恭亲王等世袭爵位王公统领。</p>
+                        <span class="tag">下五旗</span>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="banner-card">
+                    <div class="banner-img">
+                        <img src="https://picsum.photos/seed/baihong/400/300" alt="镶白旗">
+                    </div>
+                    <div class="banner-content">
+                        <h3>镶白旗房系</h3>
+                        <p>下五旗之一，主要由蒙古八旗及包衣组成，军事职能重要。</p>
+                        <span class="tag">下五旗</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Timeline -->
+        <section id="history" class="container">
+            <div class="section-title">
+                <h2>历史演变</h2>
+                <p>满清十二房制度的建立与变迁</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="content">
+                        <span class="year">1615年</span>
+                        <h3>八旗初建</h3>
+                        <p>努尔哈赤整合女真各部，正式创立八旗制度，将军事、行政、生产融为一体。</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <span class="year">1635年</span>
+                        <h3>区分满蒙汉</h3>
+                        <p>皇太极将八旗分为满洲八旗、蒙古八旗、汉军八旗，宗室房系开始分化。</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content">
+                        <span class="year">1645年</span>
+                        <h3>宗室封爵</h3>
+                        <p>清廷颁布宗室封爵制度，确立了公、侯、伯、子、男等爵位，房系趋于稳定。</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <span class="year">1799年</span>
+                        <h3>铁帽子王</h3>
+                        <p>乾隆朝确立“铁帽子王”制度，部分功勋房系得以世袭罔替，地位显赫。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chart Section -->
+        <section class="container">
+            <div class="chart-container">
+                <div class="section-title">
+                    <h2>宗室爵位分布概况</h2>
+                </div>
+                <p style="text-align: center; color: #666;">主要房系在宗室人口中的占比示意</p>
+                <div class="chart-grid">
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 40%; background-color: #C41E3A;"></div>
+                        <span class="chart-bar-label">多罗郡王</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 25%; background-color: #8B0000;"></div>
+                        <span class="chart-bar-label">贝勒</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 20%; background-color: #D4AF37;"></div>
+                        <span class="chart-bar-label">贝子</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                        <div class="chart-bar" style="height: 15%; background-color: #555;"></div>
+                        <span class="chart-bar-label">镇国公</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">“满清十二房”是官方称呼吗？</div>
+                    <div class="faq-answer">
+                        <p>严格来说，“满清十二房”是民间或通俗说法。官方历史文献中更多使用“宗室”、“觉罗”或“八旗”等术语。民间根据爵位和居住区域，将主要的房系称为十二房。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">上三旗和下五旗的区别是什么？</div>
+                    <div class="faq-answer">
+                        <p>上三旗（正黄、镶黄、正白）由皇帝直接统领，地位最高，成员多为皇室近支；下五旗由诸王贝勒分统，成员包含大量宗室、觉罗及包衣奴才。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">哪些房系被称为“铁帽子王”？</div>
+                    <div class="faq-answer">
+                        <p>在清朝历史上，共有十二位王公被封为“铁帽子王”，他们的爵位可以世袭罔替，包括礼亲王、郑亲王、睿亲王、豫亲王、肃亲王、庄亲王、顺承郡王、克勤郡王等。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">满清十二房历史资料库致力于普及清代皇室宗室、八旗制度及满清历史知识，为历史爱好者提供详实的资料参考。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#intro">宗室简介</a></li>
+                        <li><a href="#banners">八旗分布</a></li>
+                        <li><a href="#history">历史演变</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关主题</h4>
+                    <ul>
+                        <li><a href="#">清代官制</a></li>
+                        <li><a href="#">清朝皇帝世系</a></li>
+                        <li><a href="#">满族风俗</a></li>
+                        <li><a href="#">八旗子弟</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 满清十二房历史资料库. All Rights Reserved. 本站内容仅供历史学习参考.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
