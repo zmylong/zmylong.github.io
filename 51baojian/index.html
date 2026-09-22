@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>51保健品批发网-源头工厂直供与一站式采购平台</title>
+    <meta name="description" content="51保健品批发网提供专业、安全、高性价比的保健品批发服务。涵盖维生素、矿物质、草本提取物、功能饮料等品类，支持小额批发与OEM定制，厂家直发，品质保障。">
+    <meta name="keywords" content="51保健品批发网,保健品批发,保健品厂家,营养品批发,保健品OEM,维生素批发">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #008060;
+            --primary-dark: #005a45;
+            --secondary-color: #f0f8f5;
+            --accent-color: #ff6b35;
+            --text-main: #333333;
+            --text-light: #666666;
+            --text-lighter: #999999;
+            --bg-body: #ffffff;
+            --bg-section: #f9f9f9;
+            --border-color: #e0e0e0;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .bg-light {
+            background-color: var(--bg-section);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header & Nav */
+        header {
+            background: #fff;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background: var(--primary-dark);
+            color: #fff;
+            font-size: 12px;
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-info span {
+            margin-right: 15px;
+        }
+
+        .header-main {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: 400;
+            margin-left: 5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #00a884 100%);
+            color: #fff;
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        /* Search Bar */
+        .search-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            max-width: 800px;
+            margin: -50px auto 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        /* Categories */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+
+        .cat-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Featured Products */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background: #e6f7f2;
+            color: var(--primary-color);
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            height: 44px;
+            overflow: hidden;
+        }
+
+        .product-meta {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
+        .price small {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        /* Why Choose Us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-text p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(90deg, #008060 0%, #00a884 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-banner h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-light);
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Mobile menu placeholder */
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .search-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">
+                <span>欢迎来到51保健品批发网</span>
+                <span>全国统一服务热线：400-888-1234</span>
+            </div>
+            <div class="top-links">
+                <a href="#">登录</a>
+                <span style="margin: 0 5px;">|</span>
+                <a href="#">注册</a>
+                <span style="margin: 0 5px;">|</span>
+                <a href="#">商家入驻</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-main">
+            <a href="#" class="logo">
+                51保健品批发网
+                <span>51保健品批发网</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">新品上市</a></li>
+                    <li><a href="#">热门批发</a></li>
+                    <li><a href="#">企业定制</a></li>
+                    <li><a href="#">原料供应</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">采购咨询</a>
+                <a href="#" class="btn btn-primary">立即询价</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>源头工厂直供，健康产业首选批发平台</h1>
+                <p>专注营养品、膳食补充剂、功能饮料等品类，提供OEM代工、ODM定制及现货批发服务。正品保障，价格透明，支持小额混批。</p>
+                <div class="search-container">
+                    <form class="search-form" onsubmit="event.preventDefault(); alert('搜索功能演示：请输入您需要的保健品品类');">
+                        <input type="text" class="search-input" placeholder="搜索保健品、原料、规格...">
+                        <button type="submit" class="btn btn-primary">立即搜索</button>
+                    </form>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>5000+</h3>
+                        <p>正品SKU</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>200+</h3>
+                        <p>合作工厂</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>正品溯源</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>热门批发品类</h2>
+                <p>覆盖全品类健康产品，满足不同渠道需求</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <span class="cat-icon">💊</span>
+                    <h3>维生素类</h3>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🧬</span>
+                    <h3>矿物质</h3>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🌿</span>
+                    <h3>草本提取物</h3>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🥤</span>
+                    <h3>功能饮料</h3>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🧴</span>
+                    <h3>膳食补充剂</h3>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🧣</span>
+                    <h3>滋补品</h3>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🥚</span>
+                    <h3>蛋白粉</h3>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🐟</span>
+                    <h3>鱼油藻油</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>热销批发推荐</h2>
+                <p>精选市场爆款，支持OEM贴牌与现货拿货</p>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/vit1/300/300" alt="维生素C咀嚼片批发" class="product-img">
+                    <div class="product-info">
+                        <span class="product-tag">热销</span>
+                        <h3 class="product-title">进口维生素C咀嚼片 1000mg/片 x 100瓶</h3>
+                        <div class="product-meta">
+                            <span>规格：100瓶/箱</span>
+                            <span>库存：充足</span>
+                        </div>
+                        <div class="price-row">
+                            <div class="price"><small>¥</small>28.00</div>
+                            <a href="#" class="btn btn-outline" style="padding: 6px 15px; font-size: 14px;">询价</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/protein/300/300" alt="乳清蛋白粉批发" class="product-img">
+                    <div class="product-info">
+                        <span class="product-tag">新品</span>
+                        <h3 class="product-title">乳清蛋白粉（分离型）1kg/罐 批发</h3>
+                        <div class="product-meta">
+                            <span>规格：1kg/罐</span>
+                            <span>库存：充足</span>
+                        </div>
+                        <div class="price-row">
+                            <div class="price"><small>¥</small>158.00</div>
+                            <a href="#" class="btn btn-outline" style="padding: 6px 15px; font-size: 14px;">询价</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/ginseng/300/300" alt="人参提取物批发" class="product-img">
+                    <div class="product-info">
+                        <span class="product-tag">滋补</span>
+                        <h3 class="product-title">高浓度人参皂苷提取物 5% 批发</h3>
+                        <div class="product-meta">
+                            <span>规格：1kg/袋</span>
+                            <span>库存：紧张</span>
+                        </div>
+                        <div class="price-row">
+                            <div class="price"><small>¥</small>450.00</div>
+                            <a href="#" class="btn btn-outline" style="padding: 6px 15px; font-size: 14px;">询价</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/omega/300/300" alt="深海鱼油批发" class="product-img">
+                    <div class="product-info">
+                        <span class="product-tag">热销</span>
+                        <h3 class="product-title">深海鱼油软胶囊 1000mg 批发</h3>
+                        <div class="product-meta">
+                            <span>规格：1000mg/粒</span>
+                            <span>库存：充足</span>
+                        </div>
+                        <div class="price-row">
+                            <div class="price"><small>¥</small>35.00</div>
+                            <a href="#" class="btn btn-outline" style="padding: 6px 15px; font-size: 14px;">询价</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="#" class="btn btn-primary">查看更多产品</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>为什么选择51保健品批发网</h2>
+                <p>从源头把控品质，为您的商业合作提供可靠保障</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🏭</div>
+                    <div class="feature-text">
+                        <h4>源头工厂直供</h4>
+                        <p>直连全国优质保健品生产企业，省去中间环节，价格更有优势，品质层层把关。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✅</div>
+                    <div class="feature-text">
+                        <h4>正品溯源保障</h4>
+                        <p>所有产品均支持扫码溯源，拥有正规食品生产许可证，拒绝假货、水货。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-text">
+                        <h4>灵活批发模式</h4>
+                        <p>支持现货批发、小额混批及OEM/ODM定制，满足药店、电商、微商等多种渠道需求。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+        <div class="container">
+            <h2>开启您的健康产业财富之路</h2>
+            <p>立即联系客服获取最新报价单，享受专属批发折扣</p>
+            <a href="#" class="btn" style="background: #fff; color: var(--primary-color);">联系在线客服</a>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见采购问题</h2>
+                <p>了解批发流程、资质认证及售后政策</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">你们支持OEM代工吗？需要什么起订量？</div>
+                    <div class="faq-answer">
+                        <p>是的，我们提供专业的OEM/ODM服务。具体起订量根据产品配方和生产工艺而定，通常在5000-10000瓶（盒）起步，具体请联系业务经理沟通。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何保证产品的食品安全资质？</div>
+                    <div class="faq-answer">
+                        <p>我们合作的工厂均拥有国家药监局（NMPA）或相关监管机构颁发的《保健食品生产许可证》及《食品生产许可证》。每批次产品出厂均附带合格检验报告。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支持小额批发吗？如何支付？</div>
+                    <div class="faq-answer">
+                        <p>支持。我们接受支付宝、微信支付以及银行转账。小额批发一般支持现款现货，大额订单可协商账期。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">发货速度快吗？支持全国配送吗？</div>
+                    <div class="faq-answer">
+                        <p>我们承诺24小时内发货，支持顺丰、京东物流等快递，覆盖全国大部分省市地区，偏远地区除外。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>51保健品批发网</h3>
+                    <p>致力于打造中国最专业的保健品批发与溯源服务平台。我们连接优质工厂与广大经销商，为健康产业提供安全、高效、透明的供应链解决方案。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">新品推荐</a></li>
+                        <li><a href="#">批发加盟</a></li>
+                        <li><a href="#">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">采购指南</a></li>
+                        <li><a href="#">OEM定制流程</a></li>
+                        <li><a href="#">资质查询</a></li>
+                        <li><a href="#">售后政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul class="footer-links">
+                        <li>电话：400-888-1234</li>
+                        <li>邮箱：business@51ppfw.com</li>
+                        <li>地址：北京市朝阳区健康产业园区A座</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 51保健品批发网 版权所有 | 京ICP备12345678号-1</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
